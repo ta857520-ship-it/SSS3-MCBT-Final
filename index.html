@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SSS3 MCBT</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         1. WELCOME SCREEN
+    ========================================== -->
+
+    <section id="welcomeScreen" class="screen active">
+
+        <div class="welcome-page">
+
+            <div class="logo">
+                <span>SSS3</span>
+                <strong>MCBT</strong>
+            </div>
+
+            <h1>Welcome to SSS3 MCBT 🎓</h1>
+
+            <p class="subtitle">
+                Mock Computer-Based Test
+            </p>
+
+            <p class="description">
+                Practice. Challenge yourself. Improve your score.
+            </p>
+
+            <button id="startBtn">
+                LOGIN / START
+            </button>
+
+            <p class="footer">
+                Built for SSS3 students
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         2. STUDENT REGISTRATION
+    ========================================== -->
+
+    <section id="registrationScreen" class="screen">
+
+        <div class="registration-box">
+
+            <div class="logo small">
+                <span>SSS3</span>
+                <strong>MCBT</strong>
+            </div>
+
+            <h2>Student Registration</h2>
+
+            <p class="instruction">
+                Enter your details to continue.
+            </p>
+
+            <form id="studentForm">
+
+                <label for="studentName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+
+                <label for="studentClass">
+                    Class
+                </label>
+
+                <select id="studentClass" required>
+
+                    <option value="">
+                        Select your class
+                    </option>
+
+                    <option value="SSS3">
+                        SSS3
+                    </option>
+
+                </select>
+
+
+                <label>
+                    Faculty / Department
+                </label>
+
+                <div class="department-container">
+
+                    <button
+                        type="button"
+                        class="department"
+                        data-department="ARTS"
+                    >
+                        🎨
+                        <span>ARTS</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="department"
+                        data-department="SCIENCE"
+                    >
+                        🔬
+                        <span>SCIENCE</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="department"
+                        data-department="COMMERCIAL"
+                    >
+                        💼
+                        <span>COMMERCIAL</span>
+                    </button>
+
+                </div>
+
+
+                <input
+                    type="hidden"
+                    id="selectedDepartment"
+                >
+
+
+                <button
+                    type="submit"
+                    class="continue-btn"
+                >
+                    CONTINUE →
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         3. SUBJECT SELECTION
+    ========================================== -->
+
+    <section id="subjectScreen" class="screen">
+
+        <div class="subject-box">
+
+            <div class="logo small">
+                <span>SSS3</span>
+                <strong>MCBT</strong>
+            </div>
+
+            <h2>
+                Choose Your Subject 📚
+            </h2>
+
+            <p
+                id="departmentTitle"
+                class="instruction"
+            >
+                Select a subject to continue.
+            </p>
+
+
+            <!-- GENERAL SUBJECTS -->
+
+            <div class="subject-section">
+
+                <h3>
+                    📚 GENERAL SUBJECTS
+                </h3>
+
+                <p class="section-description">
+                    Available to all faculties
+                </p>
+
+                <div
+                    id="generalSubjectContainer"
+                    class="subject-container"
+                ></div>
+
+            </div>
+
+
+            <!-- FACULTY SUBJECTS -->
+
+            <div
+                id="facultySubjectSection"
+                class="subject-section"
+            >
+
+                <h3 id="facultySubjectTitle">
+                    FACULTY SUBJECTS
+                </h3>
+
+                <div
+                    id="facultySubjectContainer"
+                    class="subject-container"
+                ></div>
+
+            </div>
+
+
+            <button
+                id="subjectContinue"
+                class="continue-btn"
+                disabled
+            >
+                CONTINUE →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         4. EXAM INSTRUCTIONS
+    ========================================== -->
+
+    <section id="instructionsScreen" class="screen">
+
+        <div class="instructions-box">
+
+            <div class="logo small">
+                <span>SSS3</span>
+                <strong>MCBT</strong>
+            </div>
+
+            <h2>
+                Exam Instructions 📋
+            </h2>
+
+
+            <div class="exam-info">
+
+                <div class="info-card">
+
+                    <span>📚</span>
+
+                    <strong id="examSubject">
+                        Subject
+                    </strong>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <span>📝</span>
+
+                    <strong>
+                        30 Questions
+                    </strong>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <span>⏱️</span>
+
+                    <strong>
+                        20 Minutes
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="rules">
+
+                <h3>
+                    Before you begin:
+                </h3>
+
+                <p>
+                    ✓ Questions are randomly selected.
+                </p>
+
+                <p>
+                    ✓ Answer choices are shuffled.
+                </p>
+
+                <p>
+                    ✓ You can move between questions.
+                </p>
+
+                <p>
+                    ✓ You can review your answers.
+                </p>
+
+                <p>
+                    ✓ The test has a 20-minute time limit.
+                </p>
+
+            </div>
+
+
+            <button
+                id="readyBtn"
+                class="continue-btn"
+            >
+                I'M READY 🚀
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         5. 3 - 2 - 1 COUNTDOWN
+    ========================================== -->
+
+    <section id="countdownScreen" class="screen">
+
+        <div class="countdown-box">
+
+            <div class="logo">
+                <span>SSS3</span>
+                <strong>MCBT</strong>
+            </div>
+
+            <p>
+                Get ready...
+            </p>
+
+            <div id="countdownNumber">
+                3
+            </div>
+
+            <p>
+                Your test is about to begin 🚀
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         6. EXAM / CBT SCREEN
+    ========================================== -->
+
+    <section id="examScreen" class="screen">
+
+        <div class="exam-wrapper">
+
+            <!-- EXAM HEADER -->
+
+            <header class="exam-header">
+
+                <div class="exam-logo">
+                    <span>SSS3</span>
+                    <strong>MCBT</strong>
+                </div>
+
+                <div class="exam-subject-title">
+                    <span id="liveSubject">
+                        Subject
+                    </span>
+                </div>
+
+                <div
+                    id="timer"
+                    class="timer"
+                >
+                    20:00
+                </div>
+
+            </header>
+
+
+            <!-- QUESTION PROGRESS -->
+
+            <div class="progress-area">
+
+                <strong id="questionNumber">
+                    Question 1 of 30
+                </strong>
+
+                <div class="progress-bar">
+
+                    <div
+                        id="progressBar"
+                        class="progress-fill"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUESTIONS -->
+
+            <main class="question-area">
+
+
+                <!-- QUESTION CARD -->
+
+                <div class="question-card">
+
+                    <div
+                        id="questionText"
+                        class="question-text"
+                    >
+                        Question
+                    </div>
+
+
+                    <div
+                        id="optionsContainer"
+                        class="options-container"
+                    ></div>
+
+
+                    <!-- QUESTION NAVIGATION -->
+
+                    <div class="exam-navigation">
+
+                        <button
+                            id="previousBtn"
+                            class="nav-btn"
+                        >
+                            ← Previous
+                        </button>
+
+                        <button
+                            id="nextBtn"
+                            class="nav-btn primary"
+                        >
+                            Next →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUESTION NAVIGATOR -->
+
+                <aside class="question-panel">
+
+                    <h3>
+                        Questions
+                    </h3>
+
+                    <p>
+                        Click a number to jump.
+                    </p>
+
+                    <div
+                        id="questionNavigator"
+                        class="question-navigator"
+                    ></div>
+
+                    <button
+                        id="reviewBtn"
+                        class="review-btn"
+                    >
+                        REVIEW & SUBMIT
+                    </button>
+
+                </aside>
+
+            </main>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         7. REVIEW SCREEN
+    ========================================== -->
+
+    <section id="reviewScreen" class="screen">
+
+        <div class="review-box">
+
+            <div class="logo small">
+                <span>SSS3</span>
+                <strong>MCBT</strong>
+            </div>
+
+            <h2>
+                Review Your Answers
+            </h2>
+
+            <p class="instruction">
+                Check your answers before submitting.
+            </p>
+
+
+            <!-- REVIEW SUMMARY -->
+
+            <div class="review-summary">
+
+                <div class="summary-card">
+
+                    <strong id="answeredCount">
+                        0
+                    </strong>
+
+                    <span>
+                        Answered
+                    </span>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <strong id="unansweredCount">
+                        30
+                    </strong>
+
+                    <span>
+                        Unanswered
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- REVIEW QUESTIONS -->
+
+            <div
+                id="reviewQuestions"
+                class="review-questions"
+            ></div>
+
+
+            <!-- REVIEW ACTIONS -->
+
+            <div class="review-actions">
+
+                <button
+                    id="backToExamBtn"
+                    class="nav-btn"
+                >
+                    ← BACK TO EXAM
+                </button>
+
+                <button
+                    id="submitExamBtn"
+                    class="submit-btn"
+                >
+                    SUBMIT EXAM ✓
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         8. RESULT PROCESSING SCREEN
+    ========================================== -->
+
+    <section id="resultProcessingScreen" class="screen">
+
+        <div class="processing-box">
+            <div class="processing-animation" id="processingIcon">✓</div>
+            <h2 id="processingTitle">ALL DONE!</h2>
+            <p id="processingMessage">You have completed all 30 questions.</p>
+            <div class="processing-loader" id="processingLoader">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         9. RESULT SCREEN
+    ========================================== -->
+
+    <section id="resultScreen" class="screen">
+
+        <div class="result-box">
+            <div class="logo small">
+                <span>SSS3</span>
+                <strong>MCBT</strong>
+            </div>
+
+            <div class="result-heading">
+                <div class="result-trophy">🏆</div>
+                <h2>Exam Result</h2>
+                <p id="resultSubject">Subject</p>
+            </div>
+
+            <div class="result-student">
+                <span>Student</span>
+                <strong id="resultStudentName">—</strong>
+            </div>
+
+            <div class="result-grid">
+                <div class="result-card">
+                    <strong id="resultAttempted">0</strong>
+                    <span>Questions Attempted</span>
+                </div>
+                <div class="result-card correct">
+                    <strong id="resultCorrect">0</strong>
+                    <span>Correct</span>
+                </div>
+                <div class="result-card wrong">
+                    <strong id="resultWrong">0</strong>
+                    <span>Wrong</span>
+                </div>
+                <div class="result-card percentage">
+                    <strong id="resultPercentage">0%</strong>
+                    <span>Percentage</span>
+                </div>
+            </div>
+
+            <div class="result-score" id="resultScore">0 / 30</div>
+            <p class="result-note">Your result has been calculated from this attempt.</p>
+
+            <button id="leaderboardBtn" class="submit-btn" type="button">🏆 VIEW LEADERBOARD</button>
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         10. LEADERBOARD SCREEN
+    ========================================== -->
+
+    <section id="leaderboardScreen" class="screen">
+
+        <div class="leaderboard-box">
+            <div class="logo small">
+                <span>SSS3</span>
+                <strong>MCBT</strong>
+            </div>
+
+            <div class="leaderboard-heading">
+                <div class="result-trophy">🏆</div>
+                <h2>Live Leaderboard</h2>
+                <p id="leaderboardSubject">Subject</p>
+                <span id="leaderboardStatus" class="leaderboard-status">Connecting...</span>
+            </div>
+
+            <div id="leaderboardList" class="leaderboard-list">
+                <div class="leaderboard-empty">Loading leaderboard...</div>
+            </div>
+
+            <button id="backToResultBtn" class="submit-btn" type="button">← BACK TO RESULT</button>
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
